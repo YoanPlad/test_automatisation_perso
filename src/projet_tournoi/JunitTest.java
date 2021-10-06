@@ -16,7 +16,7 @@ class JunitTest {
 	//Un test qui permet de verifier si l'objet session existe dans l'objet  club.
 	@Test
 	public void testIsSession() {
-		
+		club.CreerSession();
 		assertNotNull(club.getSession());
 		
 	}
@@ -24,7 +24,7 @@ class JunitTest {
 	//Un test qui permet de verifier si un objet equipe existe dans l'objet  club.
 	@Test
 	public void testEquipeExiste() {
-		
+		club.creerEquipe();
 		assertNotNull(club.getEquipe().get(0));
 		
 	}
