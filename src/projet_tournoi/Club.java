@@ -1,5 +1,9 @@
 package projet_tournoi;
 import java.util.*;
+
+import tournoi.Club;
+import tournoi.Equipe;
+import tournoi.Joueur;
 /**
  * @author DELL
  * Une classe permetttant de creer un club
@@ -45,6 +49,33 @@ public class Club {
 	//fonciton qu i permet de creer une session qui re çoit en parametre une sessio n 
 	public void CreerSession() {
 		this.setSession(new Session());
+		
+	}
+	
+	public List<Joueur> tabJoueur(){
+		List<Joueur> joueur =new ArrayList<Joueur>();
+		for(int i=0;i<20;i++) {
+			int p=40;
+			Joueur J= new Joueur(i,"nom"+i,"prenom"+i,"adresse"+i,p,2021);
+			joueur.add(J);
+			p+=3;
+			
+		}
+		return joueur;	
+	}
+	public void remplissageJoueurJoueur(Equipe equipe1, Equipe equipe2,Club club) {
+		List<Joueur> joueur =new ArrayList<Joueur>();
+		joueur=tabJoueur();
+		for(int i=0;i<20;i++) {
+			if(i<joueur.size()/2) {
+				equipe1.getJoueur().add(joueur.get(0));
+			}else {
+				equipe2.getJoueur().add(joueur.get(1));
+				
+			}
+			
+		}
+		
 		
 	}
 }

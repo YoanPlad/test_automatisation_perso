@@ -32,7 +32,8 @@ class JunitTest {
 	//Un test qui permet de verifier s'il ya des joueurs dans l'objet Equipe d'un club.
 	@Test
 	public void testJoueurExisteDansEquipe() {
-
+		club.creerEquipe();
+		club.remplissageJoueurJoueur(club.getEquipe().get(0), club.getEquipe().get(1), club);
 		assertNotNull("Aucun joueur n'a été pas enregistré", club.getEquipe().get(0).getJoueur());
 		assertNotNull("Aucun joueur n'a été pas enregistré", club.getEquipe().get(1).getJoueur());
 	}
