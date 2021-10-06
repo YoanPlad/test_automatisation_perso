@@ -28,6 +28,14 @@ class JunitTest {
 		assertNotNull(club.getEquipe().get(0));
 		
 	}
+	
+	//Un test qui permet de verifier s'il ya des joueurs dans l'objet Equipe d'un club.
+	@Test
+	public void testJoueurExisteDansEquipe() {
+
+		assertNotNull("Aucun joueur n'a été pas enregistré", club.getEquipe().get(0).getJoueur());
+		assertNotNull("Aucun joueur n'a été pas enregistré", club.getEquipe().get(1).getJoueur());
+	}
 
 
 }

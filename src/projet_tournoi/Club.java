@@ -1,9 +1,5 @@
 package projet_tournoi;
 import java.util.*;
-
-import tournoi.Equipe;
-import tournoi.Session;
-
 /**
  * @author DELL
  * Une classe permetttant de creer un club
