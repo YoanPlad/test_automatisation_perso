@@ -1,9 +1,6 @@
 package projet_tournoi;
 import java.util.*;
 
-import tournoi.Club;
-import tournoi.Equipe;
-import tournoi.Joueur;
 /**
  * @author DELL
  * Une classe permetttant de creer un club
@@ -46,12 +43,13 @@ public class Club {
 		l.add(equipe2);
 		this.setEquipe(l);	
 	}
-	//fonciton qu i permet de creer une session qui re çoit en parametre une sessio n 
+	//fonciton qu i permet de creer une session qui re çoit en parametre une session 
 	public void CreerSession() {
 		this.setSession(new Session());
 		
 	}
 	
+	//fonciton qui permet de creer une liste 20 joueur
 	public List<Joueur> tabJoueur(){
 		List<Joueur> joueur =new ArrayList<Joueur>();
 		for(int i=0;i<20;i++) {
@@ -63,6 +61,8 @@ public class Club {
 		}
 		return joueur;	
 	}
+	
+	//fonciton qui permet de partager les 20 joueurs entre les deux equipe
 	public void remplissageJoueurJoueur(Equipe equipe1, Equipe equipe2,Club club) {
 		List<Joueur> joueur =new ArrayList<Joueur>();
 		joueur=tabJoueur();

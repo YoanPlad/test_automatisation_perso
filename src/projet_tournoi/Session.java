@@ -1,5 +1,4 @@
 package projet_tournoi;
-
 import java.util.ArrayList;
 import java.util.*;
 
@@ -11,7 +10,7 @@ public class Session {
 	// Declaration des attributs equipe1,equipe2 et nombrebre de Manche
 	private Equipe equipe1;
 	private Equipe equipe2;
-	private Manche nombreManche;
+	private List<Manche> nombreManche= new ArrayList<Manche>();
 	private int isSession;
 	
 
@@ -41,15 +40,16 @@ public class Session {
 		this.equipe2 = equipe2;
 	}
 
-	public Manche getNombreManche() {
+	
+	//fonciton qui permet debuter ou arreter une manche
+
+	public List<Manche> getNombreManche() {
 		return nombreManche;
 	}
 
-	public void setNombreManche(Manche nombreManche) {
+	public void setNombreManche(List<Manche> nombreManche) {
 		this.nombreManche = nombreManche;
 	}
-	
-	//fonciton qui permet debuter ou arreter une manche
 
 	public int getIsSession() {
 		return isSession;

@@ -37,6 +37,13 @@ class JunitTest {
 		assertNotNull("Aucun joueur n'a été pas enregistré", club.getEquipe().get(0).getJoueur());
 		assertNotNull("Aucun joueur n'a été pas enregistré", club.getEquipe().get(1).getJoueur());
 	}
+	
+	//Un test qui permet de verifier si manche existe dans Session d'un club.
+	@Test
+	public void testMancheExisteDansSession() {
+		club.creerEquipe();
+		assertNotNull("Aucune manche n'a été pas crée", club.getSession().getNombreManche());
+	}
 
 
 }
