@@ -41,9 +41,12 @@ class JunitTest {
 	//Un test qui permet de verifier si manche existe dans Session d'un club.
 	@Test
 	public void testMancheExisteDansSession() {
-		club.creerEquipe();
+		club.CreerSession();
+		club.getSession().creerManche(2, club);
+		System.out.println(club.getSession().getNombreManche().get(0));
 		assertNotNull("Aucune manche n'a été pas crée", club.getSession().getNombreManche());
 	}
-
+ 
 
 }
+ 

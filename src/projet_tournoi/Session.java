@@ -1,4 +1,4 @@
-package projet_tournoi;
+package projet_tournoi;   
 import java.util.ArrayList;
 import java.util.*;
 
@@ -58,7 +58,11 @@ public class Session {
 	public void setIsSession(int isSession) {
 		this.isSession = isSession;
 	}
-	public void creerManche(Manche manche) {
+	public void creerManche(int nombre,Club club) {
+		List<Manche> l =new ArrayList<Manche>();
+		for(int i=0;i<nombre;i++) {
+			club.getSession().getNombreManche().add(new Manche("manche"+i)); 
+		}
 		
 	}
 
