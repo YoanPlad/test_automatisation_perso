@@ -39,7 +39,6 @@ public class Session {
 	public void setEquipe2(Equipe equipe2) {
 		this.equipe2 = equipe2;
 	}
-
 	
 	//fonciton qui permet debuter ou arreter une manche
 
@@ -63,6 +62,14 @@ public class Session {
 		for(int i=0;i<nombre;i++) {
 			club.getSession().getNombreManche().add(new Manche("manche"+i)); 
 		}
+		
+	}
+	
+	//fonciton qui permet de former les equipes
+	public void formationDesEquipes(Club club) {
+		
+		club.getSession().setEquipe1(club.getEquipe().get(0));
+		club.getSession().setEquipe2(club.getEquipe().get(0));
 		
 	}
 

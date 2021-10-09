@@ -51,6 +51,8 @@ class JunitTest {
 	@Test
 	public void testEquipe1Equipe2ExisteDansSession() {
 		club.CreerSession();
+		club.creerEquipe();
+		club.getSession().formationDesEquipes(club);
 		assertNotNull("Aucune manche n'a été pas crée", club.getSession().getEquipe1());
 		assertNotNull("Aucune manche n'a été pas crée", club.getSession().getEquipe2());
 	}
