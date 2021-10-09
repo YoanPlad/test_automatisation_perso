@@ -46,6 +46,14 @@ class JunitTest {
 		System.out.println(club.getSession().getNombreManche().get(0));
 		assertNotNull("Aucune manche n'a été pas crée", club.getSession().getNombreManche());
 	}
+	
+	//Un test qui permet de verifier si les deux equipes existent dans Session d'un club.
+	@Test
+	public void testEquipe1Equipe2ExisteDansSession() {
+		club.CreerSession();
+		assertNotNull("Aucune manche n'a été pas crée", club.getSession().getEquipe1());
+		assertNotNull("Aucune manche n'a été pas crée", club.getSession().getEquipe2());
+	}
  
 
 }
