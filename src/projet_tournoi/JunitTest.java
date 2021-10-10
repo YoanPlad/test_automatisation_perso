@@ -24,6 +24,7 @@ class JunitTest {
 	//Un test qui permet de verifier si un objet equipe existe dans l'objet  club.
 	@Test
 	public void testEquipeExiste() {
+		
 		club.creerEquipe();
 		assertNotNull(club.getEquipe().get(0));
 		
@@ -32,9 +33,10 @@ class JunitTest {
 	//Un test qui permet de verifier s'il ya des joueurs dans l'objet Equipe d'un club.
 	@Test
 	public void testJoueurExisteDansEquipe() {
+		club.CreerSession();
 		club.creerEquipe();
 		club.remplissageJoueurJoueur(club.getEquipe().get(0), club.getEquipe().get(1), club);
-		assertNotNull("Aucun joueur n'a été pas enregistré", club.getEquipe().get(0).geJoueur());
+		assertNotNull("Aucun joueur n'a été pas enregistré", club.getEquipe().get(0).getJoueur());
 		assertNotNull("Aucun joueur n'a été pas enregistré", club.getEquipe().get(1).getJoueur());
 	}
 	
@@ -61,7 +63,14 @@ class JunitTest {
 	public void testArmeJoueurExiste() {
 		club.creerEquipe();
 		club.CreerSession();
+		//remplissage des joueur
 		club.remplissageJoueurJoueur(club.getEquipe().get(0), club.getEquipe().get(1), club);
+		//Creation des armes
+		for(int i=0;i<club.getEquipe().size();i++) {
+			for(int j=0;j<club.getEquipe().get(i).getJoueur().size();j++) {
+				club.getEquipe().get(i).getJoueur().get(j).creerArme(club, i, j);
+			}
+		}
 		for(int i=0;i<club.getEquipe().size();i++) {
 			for(int j=0;j<club.getEquipe().get(i).getJoueur().size();j++) {
 				assertNotNull("Aucune manche n'a été pas crée", club.getEquipe().get(i).getJoueur().get(j).getArme());
@@ -74,6 +83,12 @@ class JunitTest {
 		club.creerEquipe();
 		club.CreerSession();
 		club.remplissageJoueurJoueur(club.getEquipe().get(0), club.getEquipe().get(1), club);
+		//Creation des armes
+		for(int i=0;i<club.getEquipe().size();i++) {
+			for(int j=0;j<club.getEquipe().get(i).getJoueur().size();j++) {
+				club.getEquipe().get(i).getJoueur().get(j).creerArmure(club, i, j);
+			}
+		}
 		for(int i=0;i<club.getEquipe().size();i++) {
 			for(int j=0;j<club.getEquipe().get(i).getJoueur().size();j++) {
 				assertNotNull("Aucune manche n'a été pas crée", club.getEquipe().get(i).getJoueur().get(j).getArmure());			}
